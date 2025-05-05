@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airtel Money Dashboard</title>
+    <link rel="stylesheet" href="air.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="dashboard.html">Home</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </nav>
+
+    <div class="container">
+        <h2>PRIMSH Airtel Money System</h2>
+        <p>Balance: <span id="balance">K00.0</span></p>
+
+        <!-- Deposit Money -->
+        <div class="transaction-box">
+            <h3>Deposit Money</h3>
+            <input type="number" id="depositAmount" placeholder="Amount to deposit">
+            <button onclick="depositMoney()">Deposit</button>
+        </div>
+
+        <!-- Send Money Section -->
+        <div class="transaction-box">
+            <h3>Send Money</h3>
+            <input type="number" id="sendAmount" placeholder="Amount to send">
+            <input type="text" id="recipient" placeholder="Recipient Number">
+            <input type="password" id="sendPin" placeholder="Enter PIN">
+            <button onclick="sendMoney()">Send</button>
+        </div>
+
+        <!-- Withdraw Money Section -->
+        <div class="transaction-box">
+            <h3>Withdraw Money</h3>
+            <input type="number" id="withdrawAmount" placeholder="Amount to withdraw">
+            <input type="password" id="withdrawPin" placeholder="Enter PIN">
+            <button onclick="withdrawMoney()">Withdraw</button>
+        </div>
+
+        <!-- Change PIN Section -->
+        <div class="transaction-box">
+            <h3>Change PIN</h3>
+            <input type="password" id="oldPin" placeholder="Enter Old PIN">
+            <input type="password" id="newPin" placeholder="Enter New PIN">
+            <button onclick="changePin()">Change PIN</button>
+        </div>
+
+        <!-- Transaction History -->
+        <h3>Transaction History</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Recipient</th>
+                </tr>
+            </thead>
+            <tbody id="transactionTable"></tbody>
+        </table>
+    </div>
+
+    <script src="air.js"></script>
+</body>
+</html>
